@@ -1,0 +1,969 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/rodrigo/ontologies/2026/2/untitled-ontology-4"
+         xmlns="http://www.semanticweb.org/rodrigo/ontologies/2026/2/untitled-ontology-4#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/rodrigo/ontologies/2026/2/untitled-ontology-4"/>
+
+<owl:DatatypeProperty rdf:about="#Peso">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#Ofensas"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Ofensas"/>
+
+<owl:Class rdf:about="#Criminalizante">
+  <rdfs:subClassOf rdf:resource="#Ofensas"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Intelectual">
+  <rdfs:subClassOf rdf:resource="#Ofensas"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Moral">
+  <rdfs:subClassOf rdf:resource="#Ofensas"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ColunaC(Subclasse)"/>
+
+<owl:NamedIndividual rdf:about="#Abusador">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Acefalo">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Agressor">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Alienado">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Analfabeto">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Analfabeto_Funcional">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Analfabeto_Politico">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Anta">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Arrombado">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Asno">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Assassino">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#B0ls0m1n10n">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#B4b4c4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#B4nd1d0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Babaca">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bandido">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bolsominion">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Burr0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Burro">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C0rrupt0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C0v4rd3">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C4d3l4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#C4n4lh4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cadela">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Canalha">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ch31r4d0r_d3_P0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ch4nt4g1st4">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Chantagista">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cheirador_de_Po">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Chup4_R0l4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Chupa_Rola">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Corrupto">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Covarde">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cuz40">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Cuzao">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#D03nt3_M3nt4l">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#D1t4d0r">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#D3b1l_M3nt4l">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#D3s0n3st0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#D3sgr4c4d0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#D3sm10l4d0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Debil_Mental">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Desgracado">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Desmiolado">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Desonesto">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ditador">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Doente_Mental">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Escroto">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Esquerdopata">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Estelionatario">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Estuprador">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F0d1d0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F1lh0_d4_Put4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F4ls0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F4n4t1c0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#F4sc1st4">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Falso">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fanatico">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fascista">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Filho_da_Puta">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fodido">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fud1d0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Fudido">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#G3n0c1d4">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#G4d0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gado">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Genocida">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Idiota">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Idiota_Util">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ignorante">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Imbecil">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Incapaz">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Isento_de_Cerebro">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#J3gu3">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jegue">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jum3nt0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jumento">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#L0uc0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#L1x0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#L4mb3_B0t4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#L4v4g3m_C3r3br4l">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lambe_Bota">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lavagem_Cerebral">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lixo">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Louco">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lun4t1c0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lunatico">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M3l14nt3">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M3nt1r0s0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M3nt3c4pt0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M3rd1nh4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M4c0nh31r0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M4ld1t0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M4luc0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M4rg1n4l">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M4ss4_d3_M4n0br4">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#M4u_C4r4t3r">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Maconheiro">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Maldito">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Maluco">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Marginal">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Massa_de_Manobra">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mau_Carater">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Meliante">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mentecapto">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mentiroso">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Merdinha">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#N4z1">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#N4z1st4">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Nazi">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Nazista">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#P1l4ntr4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#P3d0f1l0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#P3d0f1l4">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#P3t1st4">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#P4r4s1t4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#P4u_n0_Cu">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Parasita">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pau_no_Cu">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pedofila">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pedofilo">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Petista">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pilantra">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ps1c0p4t4">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Psicopata">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Put1nh4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Put4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Puta">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Putinha">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Pux4_S4c0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Puxa_Saco">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Qu4dr1lh31r0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Quadrilheiro">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R3st0_d3_4b0rt0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R3t4rd4d0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#R4t4z4n4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ratazana">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Resto_de_Aborto">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Retardado">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#S0n3g4d0r">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#S3m_N0c40">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#S4ngu3ssug4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sanguessuga">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sem_Nocao">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sonegador">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#T3rr0r1st4">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#T4p4d0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tapado">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Terrorista">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Tr4f1c4nt3">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Traficante">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#V3rm3">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#V4d14">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#V4g4bund0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#V4g4bund4">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#V4nd4l0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vadia">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vagabunda">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vagabundo">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Vandalo">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Verme">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1d10t4">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1d10t4_Ut1l">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1gn0r4nt3">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1mb3c1l">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1nc4p4z">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#1s3nt0_d3_C3r3br0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3scr0t0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3squ3rd0p4t4">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3st3l10n4t4r10">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3stupr4d0r">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4bus4d0r">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4c3f4l0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4gr3ss0r">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4l13n4d0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4n4lf4b3t0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4n4lf4b3t0_Func10n4l">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4n4lf4b3t0_P0l1t1c0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4nt4">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4rr0mb4d0">
+  <rdf:type rdf:resource="#Moral"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4sn0">
+  <rdf:type rdf:resource="#Intelectual"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#4ss4ss1n0">
+  <rdf:type rdf:resource="#Criminalizante"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ColunaA(Termo/Variacao)">
+  <rdf:type rdf:resource="#ColunaC(Subclasse)"/>
+  <Peso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coluna B (Peso)</Peso>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#inútil">
+  <rdf:type rdf:resource="#Intelectual"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#culpado">
+  <rdf:type rdf:resource="#Criminalizante"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#descondenado">
+  <rdf:type rdf:resource="#Moral"/>
+</owl:NamedIndividual>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Criminalizante"/>
+    <rdf:Description rdf:about="#Intelectual"/>
+    <rdf:Description rdf:about="#Moral"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>

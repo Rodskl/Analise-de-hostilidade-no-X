@@ -1,64 +1,133 @@
-import sys
 import os
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
+import pandas as pd
 from learning import Analisar
 from classifier import Julgar
-
-ONTOLOGIA_INICIAL = {
-    "insulto_pessoal": {
-        "palavras": ["burro", "idiota", "imbecil", "canalha"], 
-        "peso": 5
-    },
-    "politica_agressiva": {
-        "palavras": ["fascista", "comunista", "genocida", "ladrao"], 
-        "peso": 8
-    }
-}
+import matplotlib.pyplot as plt
 
 def main():
-    caminho_dados = r"C:\Users\rodri\Downloads\TCC_IA\dados\dataset_eleicoes\2022-08-01-BOLSONARO NAO TRABALHA.parquet"
-    
-    if not os.path.exists(caminho_dados):
-        print(f"ERRO: Não encontrei o arquivo em: {caminho_dados}")
-        return
+    caminho_base = os.path.dirname(__file__)
+    caminho_parquet = os.path.join(caminho_base, '..', 'dados', 'dataset_eleicoes', '2022-08-01-BOLSONARO NAO TRABALHA.parquet')
+    caminho_owl = os.path.join(caminho_base, '..', 'dados', 'ontologia', 'Ofensas.owl')
 
-    print(f"Iniciando com dados de: {caminho_dados}")
-    AnalisarDados = Analisar(caminho_dados)
+    mentor = Analisar(caminho_parquet)
+    juiz = Julgar(caminho_owl)
 
-    caminho_modelo = os.path.join(os.path.dirname(__file__), '..', 'modelos', 'cerebro_politico.model')
+    print("\n--- Sistema de Monitoramento de Ofensas Políticas ---")
     
-    if not os.path.exists(caminho_modelo):
-        resp = input("Deseja me treinar do zero agora? (s/n): ")
-        if resp.lower() == 's':
-            AnalisarDados.treinar()
-    else:
-        resp = input("Modelo já existe. Deseja adicionar outro? (s/n): ")
-        if resp.lower() == 's':
-            AnalisarDados.treinar()
-
-    palavras_semente = ["ladrao", "burro", "fascista"]
-    novas_descobertas = AnalisarDados.descobrir_sinonimos(palavras_semente)
+    escolha = input("Deseja treinar a IA com os novos dados do modelo? (s/n): ").lower()
     
-    print(f"\nIA sugere adicionar estas palavras à ontologia: {novas_descobertas}")
-    
-    juiz = Julgar(ONTOLOGIA_INICIAL)
-    juiz.atualizar_ontologia(novas_descobertas)
-    
-    print("\n--- Teste em Tempo Real ---")
-    print("Digite uma frase para analisar (ou 'sair'):")
-    
-    while True:
-        texto = input("> ")
-        if texto.lower() == 'sair': 
-            break
+    if escolha == 's':
+        mentor.treinar()
+        palavras_semente = ["ladrao", "fascista", "burro", "canalha"]
+        novas_descobertas = mentor.descobrir_sinonimos(palavras_semente)
         
-        resultado = juiz.analisar(texto)
-        print(f"\nStatus: {resultado['status']}")
-        print(f"Impacto: {resultado['impacto_psicologico']}")
-        print(f"Score: {resultado['score']}")
-        print(f"Termos: {', '.join(resultado['termos_detectados'])}")
+        if novas_descobertas:
+            print(f"\nIA sugere novos termos: {novas_descobertas}")
+            confirmar = input("Deseja atualizar a ontologia com estes termos? (s/n): ").lower()
+            if confirmar == 's':
+                for termo in novas_descobertas:
+                    print(f"\nEm qual classe inserir '{termo}'?")
+                    print("1. Criminalizante | 2. Intelectual | 3. Moral | 4. Ignorar")
+                    op = input("Opção: ")
+                    
+                    classe_alvo = None
+                    if op == '1': classe_alvo = "Criminalizante"
+                    elif op == '2': classe_alvo = "Intelectual"
+                    elif op == '3': classe_alvo = "Moral"
+                    
+                    if classe_alvo:
+                        juiz.atualizar_ontologia([termo], classe_alvo)
+                juiz.mapear_da_ontologia()
+
+    while True:
+        print("\n--- Menu Principal ---")
+        print("1. Analisar uma frase manualmente")
+        print("2. Classificar o arquivo Parquet completo e ver exemplos")
+        print("3. Sair")
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == '3':
+            break
+            
+        elif opcao == '1':
+            frase = input("\nDigite a frase: ")
+            res = juiz.analisar(frase)
+            print(f"Status: {res['status']} | Score: {res['score']} | Termos: {', '.join(res['termos_detectados'])}")
+            
+        elif opcao == '2':
+            print("\nCarregando dataset...")
+            df = pd.read_parquet(caminho_parquet)
+            
+            coluna_texto = 'tweet_content'
+            
+            if coluna_texto not in df.columns:
+                print(f"❌ Coluna '{coluna_texto}' não encontrada. Colunas disponíveis: {list(df.columns)}")
+                continue
+                
+            print(f"Analisando {len(df)} tweets... Aguarde.")
+            
+            resultados = df[coluna_texto].apply(lambda x: juiz.analisar(str(x)))
+            
+            df['Score_Ofensa'] = resultados.apply(lambda x: x['score'])
+            df['Status'] = resultados.apply(lambda x: x['status'])
+            df['Termos_Detectados'] = resultados.apply(lambda x: ", ".join(x['termos_detectados']))
+            
+            contagem = df['Status'].value_counts()
+            
+            ordem_severidade = ['Neutro', 'Ofensivo', 'Altamente Hostil']
+            contagem = contagem.reindex(ordem_severidade).dropna()
+            
+            mapeamento_cores = {'Neutro': 'skyblue', 'Ofensivo': 'orange', 'Altamente Hostil': 'red'}
+            cores_barras = [mapeamento_cores.get(status) for status in contagem.index]
+
+            print("\nGerando gráficos...")
+            
+            plt.figure(figsize=(10, 6))
+            contagem.plot(kind='bar', color=cores_barras)
+            plt.title('Distribuição da Toxicidade nos Tweets')
+            plt.ylabel('Quantidade de Tweets')
+            plt.xlabel('Status de Toxicidade')
+            plt.xticks(rotation=45, ha='right')
+            plt.grid(axis='y', linestyle='--', alpha=0.7)
+            plt.tight_layout()
+            caminho_grafico_barras = os.path.join(caminho_base, '..', 'dados', 'distribuicao_toxicidade.png')
+            plt.savefig(caminho_grafico_barras)
+            
+            plt.figure(figsize=(8, 8))
+            plt.pie(contagem, labels=contagem.index, autopct='%1.1f%%', colors=cores_barras, startangle=140, explode=[0.05]*len(contagem))
+            plt.title('Porcentagem de Toxicidade nos Tweets')
+            plt.tight_layout()
+            caminho_grafico_pizza = os.path.join(caminho_base, '..', 'dados', 'percentual_toxicidade.png')
+            plt.savefig(caminho_grafico_pizza)
+
+            print(f"Gráfico de barras salvo em: {caminho_grafico_barras}")
+            print(f"Gráfico de pizza salvo em: {caminho_grafico_pizza}")
+            
+            print("\n✅ Resumo da Classificação:")
+            print(df['Status'].value_counts())
+            
+            print("\n--- Sorteando 2 Exemplos Anonimizados ---")
+            amostras = df.dropna(subset=[coluna_texto]).sample(n=min(2, len(df)))
+            campos_ocultos = ['user', 'user_info', 'mentions', 'reply_to', 'quoted_from', 'retweeted_from']
+            
+            for index, row in amostras.iterrows():
+                print(f"\nTweet ID: {row.get('tweet_id', 'Desconhecido')}")
+                print(f"Texto: {row[coluna_texto]}")
+                print(f"Status IA: {row.get('Status')} (Score: {row.get('Score_Ofensa')})")
+                print(f"Ofensas Detectadas: {row.get('Termos_Detectados')}")
+                
+                for campo in campos_ocultos:
+                    if campo in df.columns:
+                        valor = row[campo]
+                        if pd.notna(valor) and str(valor).strip() != "" and str(valor).strip() != "None":
+                            print(f"{campo}: [BORRADO]")
+                        else:
+                            print(f"{campo}: [VAZIO]")
+                print("-" * 50)
+            
+            caminho_saida = os.path.join(caminho_base, '..', 'dados', 'dataset_classificado.parquet')
+            df.to_parquet(caminho_saida)
+            print(f"\nDataset salvo com os resultados em:\n{caminho_saida}")
 
 if __name__ == "__main__":
     main()
