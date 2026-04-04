@@ -42,11 +42,12 @@ def main():
     while True:
         print("\n--- Menu Principal ---")
         print("1. Analisar uma frase manualmente")
-        print("2. Classificar o arquivo Parquet completo e ver exemplos")
-        print("3. Sair")
+        print("2. Analisar base de dados")
+        print("3. Coletar novos tweets via API do X (DESATIVADO)")
+        print("4. Sair")
         opcao = input("Escolha uma opção: ")
 
-        if opcao == '3':
+        if opcao == '4':
             break
             
         elif opcao == '1':
@@ -84,7 +85,7 @@ def main():
             
             plt.figure(figsize=(10, 6))
             contagem.plot(kind='bar', color=cores_barras)
-            plt.title('Distribuição da Toxicidade nos Tweets')
+            plt.title('Distribuição da Toxicidade nos Tweets (TCC_IA)')
             plt.ylabel('Quantidade de Tweets')
             plt.xlabel('Status de Toxicidade')
             plt.xticks(rotation=45, ha='right')
@@ -106,28 +107,50 @@ def main():
             print("\n✅ Resumo da Classificação:")
             print(df['Status'].value_counts())
             
-            print("\n--- Sorteando 2 Exemplos Anonimizados ---")
-            amostras = df.dropna(subset=[coluna_texto]).sample(n=min(2, len(df)))
-            campos_ocultos = ['user', 'user_info', 'mentions', 'reply_to', 'quoted_from', 'retweeted_from']
+            print("\n--- Sorteando 2 Exemplos Anonimizados (Com Ofensas) ---")
+            df_ofensivos = df[df['Termos_Detectados'] != ""]
             
-            for index, row in amostras.iterrows():
-                print(f"\nTweet ID: {row.get('tweet_id', 'Desconhecido')}")
-                print(f"Texto: {row[coluna_texto]}")
-                print(f"Status IA: {row.get('Status')} (Score: {row.get('Score_Ofensa')})")
-                print(f"Ofensas Detectadas: {row.get('Termos_Detectados')}")
+            if not df_ofensivos.empty:
+                amostras = df_ofensivos.dropna(subset=[coluna_texto]).sample(n=min(2, len(df_ofensivos)))
+                campos_ocultos = ['user', 'user_info', 'mentions', 'reply_to', 'quoted_from', 'retweeted_from']
                 
-                for campo in campos_ocultos:
-                    if campo in df.columns:
-                        valor = row[campo]
-                        if pd.notna(valor) and str(valor).strip() != "" and str(valor).strip() != "None":
-                            print(f"{campo}: [BORRADO]")
-                        else:
-                            print(f"{campo}: [VAZIO]")
-                print("-" * 50)
+                for index, row in amostras.iterrows():
+                    print(f"\nTweet ID: {row.get('tweet_id', 'Desconhecido')}")
+                    print(f"Texto: {row[coluna_texto]}")
+                    print(f"Status IA: {row.get('Status')} (Score: {row.get('Score_Ofensa')})")
+                    print(f"Ofensas Detectadas: {row.get('Termos_Detectados')}")
+                    
+                    for campo in campos_ocultos:
+                        if campo in df.columns:
+                            valor = row[campo]
+                            if pd.notna(valor) and str(valor).strip() != "" and str(valor).strip() != "None":
+                                print(f"{campo}: [BORRADO]")
+                            else:
+                                print(f"{campo}: [VAZIO]")
+                    print("-" * 50)
+            else:
+                print("\nNenhum tweet contendo termos da ontologia foi encontrado nesta execução.")
             
             caminho_saida = os.path.join(caminho_base, '..', 'dados', 'dataset_classificado.parquet')
             df.to_parquet(caminho_saida)
             print(f"\nDataset salvo com os resultados em:\n{caminho_saida}")
+            
+        elif opcao == '3':
+            print("\n Desativado Temporariamente")
+    
+            # from scraping import Scraping
+            # token_x = ""
+            # termo = input("Digite o termo ou hashtag para buscar no X: ")
+            # print(f"Buscando até 500 tweets recentes contendo '{termo}'...")
+            # 
+            # coletor = Scraping(token_x)
+            # df_novos = coletor.buscar_tweets(termo, limite=500)
+            # 
+            # if df_novos is not None:
+            #     caminho_novo_parquet = coletor.salvar_dataset(df_novos, termo, caminho_base)
+            #     print(f"✅ Coleta finalizada! {len(df_novos)} tweets salvos em: {caminho_novo_parquet}")
+            # else:
+            #     print("❌ Nenhum tweet encontrado ou erro na comunicação com a API.")
 
 if __name__ == "__main__":
     main()
