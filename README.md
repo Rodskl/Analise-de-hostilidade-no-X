@@ -45,7 +45,7 @@ Com o ambiente ativado, instale todas as bibliotecas necessárias:
 pip install -r requirements.txt
 ```
 ----
-💻 Como Usar (Executando a Interface)
+Como Usar (Executando a Interface)
 Para iniciar a plataforma analítica, utilize o comando do Streamlit no seu terminal
 
 ```
@@ -63,7 +63,7 @@ Coleta (X API): Módulo temporariamente desativado por padrão.
 
 ----
 
-⚠️ Observações Acadêmicas
+Observações Acadêmicas
 Privacidade (LGPD): A plataforma mascara colunas de identificação pessoal (user, mentions, etc.) antes de exibir exemplos qualitativos.
 
 API do X: O módulo scraping.py exige uma conta de desenvolvedor no X. Para utilizá-lo, é necessário inserir o BEARER_TOKEN no código fonte e remover a trava de segurança na aba 4 da interface.
