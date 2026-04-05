@@ -109,7 +109,7 @@ with tab2:
                 
                 df_ofensivos = df[df['Termos_Detectados'] != ""]
                 if not df_ofensivos.empty:
-                    amostras = df_ofensivos.dropna(subset=[coluna_texto]).sample(n=min(2, len(df_ofensivos)))
+                    amostras = df_ofensivos.dropna(subset=[coluna_texto]).sample(n=min(10, len(df_ofensivos)))
                     for _, row in amostras.iterrows():
                         with st.expander(f"Tweet ID: {row.get('tweet_id', 'Desconhecido')} | Status: {row.get('Status')}"):
                             st.write(f"**Texto:** {row[coluna_texto]}")
